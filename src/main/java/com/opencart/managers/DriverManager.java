@@ -27,7 +27,7 @@ public class DriverManager {
                 System.out.println("The Safari Driver was initiated");
                 break;
             default:
-                System.out.println("there is not defined such a driver" + webDriverType);
+                System.out.println("There is not defined such a driver" + webDriverType);
         }
     }
 
