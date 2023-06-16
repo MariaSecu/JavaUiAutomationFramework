@@ -48,11 +48,33 @@ public class TestRunner {
 
         WebElement continueButton = driver.findElement(By.xpath("//button[normalize-space()='Continue']"));
         continueButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
         WebElement continueNavigate = driver.findElement(By.xpath("//a[normalize-space()='Continue']"));
         continueNavigate.click();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
+
+        WebElement accountIconLogOut = driver.findElement(By.xpath("//i[@class='fa-solid fa-user']"));
+        accountIconLogOut.click();
+
+        WebElement logOutField = driver.findElement(By.xpath("//a[@class='dropdown-item'][normalize-space()='Logout']"));
+        logOutField.click();
+
+        WebElement logInButton = driver.findElement(By.xpath("//a[@class='list-group-item'][normalize-space()='Login']"));
+        logInButton.click();
+
+        WebElement emailLogIn = driver.findElement(By.xpath("//input[@id='input-email']"));
+        emailLogIn.sendKeys(randomEmail);
+
+        WebElement passwordLogIn = driver.findElement(By.xpath(" //input[@id='input-password']"));
+        passwordLogIn.sendKeys(randomPassword);
+        Thread.sleep(5000);
+
+
+        //Created a button to log in to an existing customer.
+        WebElement loginButton = driver.findElement(By.xpath("//button[normalize-space()='Login']"));
+        loginButton.click();
+        Thread.sleep(5000);
 
         System.out.println(driver.getCurrentUrl());
         driver.close();
