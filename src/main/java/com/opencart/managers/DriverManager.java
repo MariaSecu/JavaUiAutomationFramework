@@ -2,6 +2,7 @@ package com.opencart.managers;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class DriverManager {
     private static String webDriverType = "Chrome";
@@ -11,7 +12,9 @@ public class DriverManager {
     private DriverManager() {
         switch (webDriverType.toUpperCase()) {
             case "CHROME":
-                driver = new ChromeDriver();
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--remote-allow-origins=*");
+                driver = new ChromeDriver(options);
                 System.out.println("The Chrome Driver was initiated");
                 break;
             case "FIREFOX":
