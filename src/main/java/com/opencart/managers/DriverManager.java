@@ -47,4 +47,11 @@ public class DriverManager {
         }
         return driver;
     }
+
+    public void quiteTheDriver() {
+        driver.quit();
+        driver = null;
+        instance = null;
+        System.out.println("The Browser is closed and session is set to null");
+    }
 }
