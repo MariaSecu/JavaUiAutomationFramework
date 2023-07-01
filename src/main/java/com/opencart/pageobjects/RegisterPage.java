@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 
 public class RegisterPage extends Page {
 
+    private WebDriver driver;
+
     public RegisterPage(WebDriver driver) {
         super(driver);
     }
@@ -40,7 +42,12 @@ public class RegisterPage extends Page {
         privacyPolacy.click();
     }
 
-    public void clickOnContinueButton() {
+    public void scrollFromContinueBtn(WebDriver driver) throws InterruptedException {
+        ScrollManager.scrollToElement(driver, privacyPolacy);
+    }
+
+    public void clickOnContinueButton() throws InterruptedException {
+        Thread.sleep(500);
         continueButton.click();
     }
 }
