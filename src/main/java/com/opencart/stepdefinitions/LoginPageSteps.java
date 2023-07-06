@@ -20,9 +20,5 @@ public class LoginPageSteps {
         loginPage.fillInLoginForm(emailValue, passwordValue);
     }
 
-    @When("login button is clicked")
-    public void loginButtonIsClicked() {
-        loginPage.clickLoginBtn();
-    }
 
 }

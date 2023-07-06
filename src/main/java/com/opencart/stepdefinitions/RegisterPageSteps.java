@@ -28,21 +28,6 @@ public class RegisterPageSteps {
 
     }
 
-    @And("the PrivacyPolacy is enable")
-    public void thePrivacyPolacyIsEnable() {
-        try {
-            registerPage.switchOnThePrivacyPolacy(driver);
-        } catch (InterruptedException e) {
-            System.out.println("Error ");
-        }
-
-    }
-
-    @And("continueButton is clicked")
-    public void continuebuttonIsClicked() throws InterruptedException {
-        registerPage.clickOnContinueButton();
-    }
-
     @And("the registration form is completed with the following data:")
     public void theRegistrationFormIsCompletedWithTheFollowingData(Map<String, String> userDetailMap) throws InterruptedException {
         String firstNameValue = userDetailMap.get("firstName");

@@ -1,0 +1,2 @@
+browserType = CHROME
+isIncognitoChromeEnable = true
