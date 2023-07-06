@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class DriverManager {
-    private static String webDriverType = "Chrome";
+    private static String webDriverType = ConfigReadManager.getProperty("browserType");
     private static DriverManager instance;
     private WebDriver driver;
 
@@ -13,7 +13,10 @@ public class DriverManager {
         switch (webDriverType.toUpperCase()) {
             case "CHROME":
                 ChromeOptions options = new ChromeOptions();
-                options.addArguments("--incognito");
+                if (ConfigReadManager.getProperty("isIncognitoChromeEnable").equals("true")) {
+                    options.addArguments("--incognito");
+                }
+
                 //options.addArguments("--headless");
                 driver = new ChromeDriver(options);
                 System.out.println("The Chrome Driver was initiated");

@@ -6,7 +6,7 @@ Feature: Login Flow Test Suite
     And the following set of credentials is entered into the login form:
       | <email>    |
       | <password> |
-    When login button is clicked
+    When "loginButtonInput" from "LoginPage" is clicked
     Then the following error messages is displayed:
       | Warning: No match for E-Mail Address and/or Password. |
     Examples:
@@ -20,7 +20,7 @@ Feature: Login Flow Test Suite
     And the following set of credentials is entered into the login form:
       | <email>    |
       | <password> |
-    When login button is clicked
+    When "loginButtonInput" from "LoginPage" is clicked
     Then the url contains the following keyword: "account"
     Examples:
       | email                    | password              |
